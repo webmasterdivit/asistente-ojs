@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      - OPENAI_API_KEY=sk-REEMPLAZAR
+      - OJS_API_URL=https://ojs.example.com/api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+  frontend-test:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    command: ["npm", "run", "test"]
