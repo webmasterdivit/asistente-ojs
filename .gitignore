@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env
+.env
+*.egg-info/
+
+# Node/Vite
+node_modules/
+dist/
+*.log
+
+# VSCode
+.vscode/
+
+# Docker
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+coverage/
+*.cover
+*.py,cover
+
+# Others
+*.sqlite3
+*.db
+
+# Frontend build
+frontend/dist/
+
+# Backend build
+backend/__pycache__/
+backend/tests/__pycache__/
+
+# Ignore local env files
+backend/.env
+frontend/.env
